@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keyword Filter</title>
+  <style>
+    body {
+      width: 250px;
+      font-family: Arial;
+      padding: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 5px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 15px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Add Keyword</h3>
+
+  <input type="text" id="keywordInput" placeholder="Enter keyword" />
+
+  <button id="saveBtn">Save</button>
+
+  <select id="modeSelect">
+    <option value="block">Block</option>
+    <option value="highlight">Highlight</option>
+  </select>
+
+  <ul id="keywordList"></ul>
+
+  <script src="popup.js"></script>
+</body>
+</html>
