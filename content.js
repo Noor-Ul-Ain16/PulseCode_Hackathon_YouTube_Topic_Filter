@@ -7,30 +7,52 @@ function filterVideos() {
       let keywords = result.keywords || [];
       let mode = result.mode || "block";
 
-      let videos = document.querySelectorAll(
-        "ytd-video-renderer, ytd-grid-video-renderer"
-      );
+      
+     let videos = document.querySelectorAll(
+  "ytd-video-renderer, " +
+  "ytd-grid-video-renderer, " +
+  "ytd-rich-item-renderer, " +
+  "ytd-compact-video-renderer, " +
+  "ytd-reel-item-renderer, " +
+  "ytd-reel-video-renderer, " +
+  "ytd-rich-grid-media"
+);
 
       videos.forEach(video => {
 
-        let title = video.querySelector("#video-title");
-        if (!title) return;
+        
+        video.style.display = "";
+        video.style.border = "";
 
-        let text = title.innerText.toLowerCase();
+        
+        let titleEl =
+          video.querySelector("#video-title") ||
+          video.querySelector("h3") ||
+          video.querySelector("a#video-title");
 
-        keywords.forEach(word => {
+        let titleText = titleEl ? titleEl.innerText.toLowerCase() : "";
 
-          if (text.includes(word)) {
+       
+        let channelEl =
+          video.querySelector("#channel-name") ||
+          video.querySelector("ytd-channel-name");
 
-            if (mode === "block") {
-              video.style.display = "none";
-            } else {
-              video.style.border = "3px solid yellow";
-            }
+        let channelText = channelEl ? channelEl.innerText.toLowerCase() : "";
 
+        
+        let combinedText = titleText + " " + channelText;
+
+        let matched = keywords.some(word =>
+          combinedText.includes(word)
+        );
+
+        if (matched) {
+          if (mode === "block") {
+            video.style.display = "none";
+          } else {
+            video.style.border = "3px solid yellow";
           }
-
-        });
+        }
 
       });
 
@@ -42,4 +64,18 @@ function filterVideos() {
 
 }
 
-setInterval(filterVideos, 2000);
+// Run once
+filterVideos();
+
+const observer = new MutationObserver(() => {
+
+  requestAnimationFrame(() => {
+    filterVideos();
+  });
+
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});

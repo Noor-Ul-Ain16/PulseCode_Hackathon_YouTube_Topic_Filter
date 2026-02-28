@@ -1,54 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Keyword Filter</title>
+  <title>YouTube Smart Filter</title>
+
   <style>
     body {
-      width: 250px;
-      font-family: Arial;
-      padding: 10px;
+      width: 280px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
     }
 
     input {
       width: 100%;
-      padding: 5px;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
       margin-bottom: 10px;
     }
 
     button {
       width: 100%;
-      padding: 5px;
-      background: black;
-      color: white;
+      padding: 8px;
+      border-radius: 6px;
       border: none;
+      background: #ff4757;
+      color: white;
+      font-weight: bold;
       cursor: pointer;
-      margin-bottom: 10px;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #ff6b81;
     }
 
     ul {
-      padding-left: 15px;
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
     }
 
     li {
-      margin-bottom: 5px;
+      background: rgba(255,255,255,0.1);
+      padding: 6px 8px;
+      border-radius: 20px;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
     }
+
+    .del {
+      background: none;
+      border: none;
+      color: #ff6b81;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
   </style>
 </head>
+
 <body>
 
-  <h3>Add Keyword</h3>
+<h2>Smart Filter</h2>
 
-  <input type="text" id="keywordInput" placeholder="Enter keyword" />
+<input id="keywordInput" placeholder="Enter keyword">
 
-  <button id="saveBtn">Save</button>
+<select id="modeSelect">
+  <option value="block">Block Mode</option>
+  <option value="highlight">Highlight Mode</option>
+</select>
 
-  <select id="modeSelect">
-    <option value="block">Block</option>
-    <option value="highlight">Highlight</option>
-  </select>
+<button id="saveBtn">Add Keyword</button>
 
-  <ul id="keywordList"></ul>
+<ul id="keywordList"></ul>
 
-  <script src="popup.js"></script>
+<script src="popup.js"></script>
+
 </body>
 </html>
