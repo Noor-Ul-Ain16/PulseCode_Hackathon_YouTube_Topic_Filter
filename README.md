@@ -29,6 +29,7 @@ ______________
 Implemented By Myself
 
 All core functionality was designed and implemented independently, including:
+
 •	The popup UI for managing keywords and selecting filter modes.
 
 •	The content script for scanning video cards, detecting topics, calculating sentiment scores, and applying filtering logic.
