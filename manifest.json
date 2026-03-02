@@ -1,18 +1,49 @@
 {
-  "manifest_version": 3,
-  "name": "YouTube Keyword Filter",
-  "version": "1.0",
-  "permissions": ["storage", "activeTab", "scripting"],
-  "host_permissions": ["*://www.youtube.com/*"],
 
-  "content_scripts": [
-    {
-      "matches": ["*://www.youtube.com/*"],
-      "js": ["content.js"]
-    }
-  ],
+"manifest_version": 3,
 
-  "action": {
-    "default_popup": "popup.html"
-  }
+"name": "YouTube Topic Filter",
+
+"description": "Browser extension for real-time YouTube content filtering using keyword and heuristic topic detection.",
+
+"version": "1.0",
+
+"permissions": [
+
+"storage",
+
+"activeTab",
+
+"scripting"
+
+],
+
+"host_permissions": [
+
+"https://www.youtube.com/*"
+
+],
+
+"action": {
+
+"default_popup": "popup.html",
+
+"default_title": "YouTube Topic Filter"
+
+},
+
+"content_scripts": [
+
+{
+
+  "matches": ["https://www.youtube.com/*"],
+
+  "js": ["content.js"],
+
+  "run_at": "document_idle"
+
+}
+
+]
+
 }

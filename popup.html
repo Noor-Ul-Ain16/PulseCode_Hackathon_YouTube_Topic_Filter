@@ -1,98 +1,161 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>YouTube Smart Filter</title>
+<!DOCTYPE html><html><head><title>YouTube Topic Filter</title><style>
+  
 
-  <style>
-    body {
-      width: 280px;
-      padding: 15px;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #2c2c54);
-      color: white;
-    }
+  
+body{
+  
+  width: 300px;
+  
+  padding: 15px;
+  
+  font-family: Arial, sans-serif;
+  
+  background: linear-gradient(135deg,#1e1e2f,#2c2c54);
+  
+  color:white;
+  
+}
+  
 
-    h2 {
-      text-align: center;
-      margin-bottom: 15px;
-    }
+  
+h2{
+  
+  text-align:center;
+  
+}
+  
 
-    input {
-      width: 100%;
-      padding: 8px;
-      border-radius: 6px;
-      border: none;
-      margin-bottom: 10px;
-    }
+  
+/* Badge */
+  
+.badge{
+  
+  text-align:center;
+  
+  font-size:12px;
+  
+  color:#00ffcc;
+  
+  margin-bottom:10px;
+  
+}
+  
 
-    select {
-      width: 100%;
-      padding: 8px;
-      border-radius: 6px;
-      border: none;
-      margin-bottom: 10px;
-    }
+  
+/* Inputs */
+  
+input, select{
+  
+  width:100%;
+  
+  padding:8px;
+  
+  border-radius:6px;
+  
+  border:none;
+  
+  margin-bottom:10px;
+  
+}
+  
 
-    button {
-      width: 100%;
-      padding: 8px;
-      border-radius: 6px;
-      border: none;
-      background: #ff4757;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+  
+/* Buttons */
+  
+button{
+  
+  width:100%;
+  
+  padding:8px;
+  
+  border-radius:6px;
+  
+  border:none;
+  
+  background:#ff4757;
+  
+  color:white;
+  
+  font-weight:bold;
+  
+  cursor:pointer;
+  
+  margin-bottom:8px;
+  
+}
+  
 
-    button:hover {
-      background: #ff6b81;
-    }
+  
+button:hover{
+  
+  background:#ff6b81;
+  
+}
+  
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 10px;
-    }
+  
+/* Keyword list */
+  
+ul{
+  
+  list-style:none;
+  
+  padding:0;
+  
+}
+  
 
-    li {
-      background: rgba(255,255,255,0.1);
-      padding: 6px 8px;
-      border-radius: 20px;
-      margin-bottom: 6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-    }
+  
+li{
+  
+  background:rgba(255,255,255,0.1);
+  
+  padding:6px 8px;
+  
+  border-radius:20px;
+  
+  margin-bottom:6px;
+  
+  display:flex;
+  
+  justify-content:space-between;
+  
+  font-size:13px;
+  
+}
+  
 
-    .del {
-      background: none;
-      border: none;
-      color: #ff6b81;
-      cursor: pointer;
-      font-weight: bold;
-    }
+  
+.del{
+  
+  background:none;
+  
+  border:none;
+  
+  color:#ff6b81;
+  
+  cursor:pointer;
+  
+}
+  
 
-  </style>
-</head>
+  
+/* Stats box */
+  
+.stats{
+  
+  text-align:center;
+  
+  margin-top:12px;
+  
+  font-weight:bold;
+  
+  color:#00ffcc;
+  
+}
+  
 
-<body>
+  
+</style></head><body><h2>Smart Filter</h2><div class="badge">AI Inspired Topic Filtering</div><input id="keywordInput" placeholder="Enter keyword"><select id="modeSelect">  <option value="block">Block Mode</option>  <option value="highlight">Highlight Mode</option>  <option value="whitelist">Whitelist Mode</option>  <option value="sentiment">Sentiment Filter</option></select><button id="saveBtn">Add Keyword</button>
 
-<h2>Smart Filter</h2>
-
-<input id="keywordInput" placeholder="Enter keyword">
-
-<select id="modeSelect">
-  <option value="block">Block Mode</option>
-  <option value="highlight">Highlight Mode</option>
-</select>
-
-<button id="saveBtn">Add Keyword</button>
-
-<ul id="keywordList"></ul>
-
-<script src="popup.js"></script>
-
-</body>
-</html>
+<ul id="keywordList"></ul><script src="popup.js"></script></body></html>
