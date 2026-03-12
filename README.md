@@ -1,9 +1,14 @@
-# PulseCode_Hackathon_YouTube_Topic_Filter
-Problem Understanding
+# PulseCode Hackathon YouTube Topic Filter
+
+**Problem Understanding**
+---
 
 YouTube contains an enormous variety of content, which can sometimes be overwhelming or distracting for users. Videos may include clickbait, misleading titles, controversial topics, or content that users may wish to avoid. Currently, there is no lightweight, user-friendly solution that allows real-time filtering of videos directly in the YouTube feed based on keywords, topics, or sentiment. The challenge is to provide an extension that gives users control over what content they see, while remaining efficient and unobtrusive.
 ______________
-Approach
+
+**Approach**
+---
+
 
 To solve this problem, the extension uses a combination of keyword detection, topic mapping, and sentiment analysis:
 1.	User Input: Users can add, edit, or delete keywords and choose a filtering mode (Block, Highlight, Whitelist, or Sentiment).
@@ -16,7 +21,8 @@ o	Calculates a sentiment score to detect clickbait or sensational content.
 o	Applies the selected mode to hide, highlight, or whitelist videos.
 5.	Dynamic Updates: A MutationObserver and periodic checks ensure new videos loaded via infinite scroll are filtered in real time.
 ______________
-Challenges Faced
+**Challenges Faced**
+---
 
 •	Dynamic Content Loading: YouTube’s infinite scroll required a reliable way to detect newly loaded video cards, solved with a combination of MutationObserver and periodic filtering.
 
@@ -26,7 +32,8 @@ Challenges Faced
 
 •	User Experience: Allowing users to add, edit, and delete keywords in the popup while immediately reflecting changes in the content required smooth UI and event handling logic.
 ______________
-Implemented By Myself
+**Implemented By Myself**
+---
 
 All core functionality was designed and implemented independently, including:
 
